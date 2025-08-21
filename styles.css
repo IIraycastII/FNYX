@@ -3,6 +3,7 @@
   --ink:#0b0b0c; /* near-black text */
   --muted:#9a9a9d; /* subtle ui strokes */
   --accent:#c7a15c; /* golden accent for active thumb border */
+  --brand-offset:200px; /* horizontal offset for the vertical word column */
 }
 
 *{box-sizing:border-box}
@@ -29,25 +30,31 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:1rem;
-  padding-top:1rem;
-  padding-left:200px; /* move the vertical word further right */
+  gap:0;                  /* no vertical gap so letters can use full height */
+  padding-top:0;          /* remove top padding to avoid clipping */
+  padding-left:var(--brand-offset);
+  overflow:visible;
 }
 .brand-vertical .season{
+  position:absolute; top:6px; left:0;
   writing-mode:vertical-rl;
   text-orientation:mixed;
   font-size:0.7rem;
   letter-spacing:0.15em;
 }
 .brand-vertical .word{
-  writing-mode:vertical-rl;
-  text-orientation:upright;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100vh; /* dedicate full viewport height to stack */
+  gap:0;       /* no gaps between letters */
+}
+.brand-vertical .word span{
   font-family:'Bebas Neue', Impact, sans-serif;
   font-weight:700;
-  /* BIG and clear */
-  font-size:18vh;   /* each letter ~18% of screen height */
+  font-size:calc(100vh / 8);
+  line-height:1;  /* exact character box height */
   letter-spacing:0;
-  line-height:0.8;  /* tighter vertical packing */
 }
 
 /* Top bar */
@@ -109,4 +116,14 @@ body{
   .brand-vertical{width:80px}
   .credit{left:80px}
   .thumb{width:140px; height:94px}
+}
+
+/* Center brand beside vertical word */
+.side-fnyx{
+  position:absolute;
+  /* place to the LEFT of the vertical word column */
+  left: calc(var(--brand-offset) - 120px);
+  top:50%; transform:translateY(-50%);
+  font-family:'Bebas Neue', Impact, sans-serif;
+  font-size:40px; letter-spacing:0.2em;
 }
