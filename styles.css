@@ -88,6 +88,14 @@ body{
 /* remove temporary rectangle placeholder */
 .stage, .portrait{display:none}
 
+/* Hero image positioning to match "very big in center" */
+.hero-img{
+  position:absolute;
+  left:50%; top:50%; transform:translate(-50%, -50%);
+  height:100vh; width:auto; object-fit:cover;
+  filter: none;
+}
+
 /* Credit text left of portrait */
 .credit{
   /* place the note beside the vertical DREAMERS column */
