@@ -1,0 +1,112 @@
+:root{
+  --bg:#e9e9ea; /* light gray background as in shot */
+  --ink:#0b0b0c; /* near-black text */
+  --muted:#9a9a9d; /* subtle ui strokes */
+  --accent:#c7a15c; /* golden accent for active thumb border */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* Left vertical brand */
+.brand-vertical{
+  position:absolute;
+  inset:0 auto 0 0;
+  width:min(22vw,250px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  padding-top:1rem;
+  padding-left:200px; /* move the vertical word further right */
+}
+.brand-vertical .season{
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  font-size:0.7rem;
+  letter-spacing:0.15em;
+}
+.brand-vertical .word{
+  writing-mode:vertical-rl;
+  text-orientation:upright;
+  font-family:'Bebas Neue', Impact, sans-serif;
+  font-weight:700;
+  /* BIG and clear */
+  font-size:18vh;   /* each letter ~18% of screen height */
+  letter-spacing:0;
+  line-height:0.8;  /* tighter vertical packing */
+}
+
+/* Top bar */
+.topbar{
+  position:absolute;
+  top:0; left:0; right:0;
+  display:block;
+  padding:1.2rem 1.4rem 0.2rem;
+}
+.stacked-top{display:flex; flex-direction:column; align-items:center; gap:6px;}
+.stack-item{font-weight:800; font-size:0.78rem; letter-spacing:0.22em}
+.menu-button{
+  position:absolute; top:0.9rem; right:0.9rem;
+  width:44px; height:44px; border-radius:4px; /* smaller menu button */
+  background:#0b0b0c; border:none; cursor:pointer;
+  display:grid; place-items:center; gap:6px; padding:10px;
+}
+.menu-button span{display:block; width:20px; height:2px; background:#fff}
+
+/* Right dots */
+.right-dots{
+  position:absolute; right:24px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:22px;
+}
+.right-dots .dot{display:grid; place-items:center; width:14px; height:14px}
+.right-dots .dot .circle{display:block; width:10px; height:10px; border:1.6px solid var(--ink); border-radius:50%}
+.right-dots .dot.active .circle{border-color:var(--ink)}
+.right-dots::before{content:""; position:absolute; right:22px; top:-2px; width:16px; height:2px; background:var(--ink)}
+
+/* Center stage */
+/* remove temporary rectangle placeholder */
+.stage, .portrait{display:none}
+
+/* Credit text left of portrait */
+.credit{
+  /* place the note beside the vertical DREAMERS column */
+  position:absolute; left: calc(min(22vw,250px) + 72px) ; top: 42%;
+  transform: translateY(-10px);
+  letter-spacing:0.12em; font-size:0.62rem; line-height:1.2;
+}
+.credit .label{opacity:.7}
+.credit .name{margin-top:6px}
+
+/* bottom-left micro labels */
+.foot-left{
+  position:absolute; left:40px; bottom:24px; letter-spacing:0.5em; font-weight:600; font-size:0.7rem;
+}
+
+/* bottom-right thumbnails */
+.thumbs{
+  position:absolute; right:24px; bottom:24px; display:flex; gap:16px; align-items:flex-end;
+}
+.thumb{
+  width:180px; height:120px; background:#0f0f12; opacity:0.9; border-radius:6px;
+}
+.thumb.active{outline:4px solid var(--accent); background:#121317}
+
+@media (max-width: 900px){
+  .brand-vertical{width:80px}
+  .credit{left:80px}
+  .thumb{width:140px; height:94px}
+}
