@@ -483,13 +483,8 @@ body{
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 /* Collection Sections Styling */
 .collection-section {
-=======
-/* New Sections Styling */
-.collection-section, .about-section {
->>>>>>> a2c47463d240999535b8fe5bfea04f61a7dc0b4e
   min-height: 100vh;
   padding: 80px 40px;
   background: var(--bg);
@@ -1141,11 +1136,6 @@ body{
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 8px;
-=======
-.section-header {
-  text-align: center;
-  margin-bottom: 60px;
-  max-width: 800px;
 }
 
 .section-title {
@@ -1209,12 +1199,10 @@ body{
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 10px;
->>>>>>> a2c47463d240999535b8fe5bfea04f61a7dc0b4e
   color: var(--ink);
   letter-spacing: 0.05em;
 }
 
-<<<<<<< HEAD
 .item-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
@@ -1652,7 +1640,6 @@ body{
   margin: 0;
 }
 
->>>>>>> a2c47463d240999535b8fe5bfea04f61a7dc0b4e
 /* About Us Section Specific Styling */
 .about-section {
   background: var(--ink);
@@ -1660,11 +1647,7 @@ body{
   text-align: center;
 }
 
-<<<<<<< HEAD
 .about-section .collection-title {
-=======
-.about-section .section-title {
->>>>>>> a2c47463d240999535b8fe5bfea04f61a7dc0b4e
   color: var(--bg);
   margin-bottom: 40px;
 }
@@ -1737,7 +1720,6 @@ body{
     font-size: clamp(2.5rem, 8vw, 4rem);
   }
   
->>>>>>> a2c47463d240999535b8fe5bfea04f61a7dc0b4e
   .about-stats {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1773,7 +1755,6 @@ body{
     height: 250px;
   }
   
->>>>>>> a2c47463d240999535b8fe5bfea04f61a7dc0b4e
   .product-panel {
     position: relative;
     right: auto;
