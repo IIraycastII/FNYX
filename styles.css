@@ -1109,6 +1109,62 @@ body{
   gap: 30px;
 }
 
+/* Horizontal Anime Products Layout */
+.anime-products-horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg);
+  -webkit-overflow-scrolling: touch;
+}
+
+.anime-products-horizontal::-webkit-scrollbar {
+  height: 8px;
+}
+
+.anime-products-horizontal::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.anime-products-horizontal::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+.anime-product-card {
+  flex: 0 0 280px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.anime-product-card .item-image {
+  height: 250px;
+  position: relative;
+}
+
+.anime-product-card .item-info {
+  padding: 15px;
+}
+
+/* Theme styles for Demon Slayer */
+.demonslayer-theme {
+  background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+  color: white;
+}
+
 .grid-item {
   background: white;
   border-radius: 12px;
